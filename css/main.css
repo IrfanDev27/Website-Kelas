@@ -1,0 +1,745 @@
+:root {
+  /*Retro Color Palette*/
+  --bg-color: #f5e6c8;        /* krem retro */
+  --primary-color: #8b5e3c;  /* coklat tua */
+  --secondary-color: #d4a373;/* mustard */
+  --accent-color: #e76f51;   /* oranye retro */
+  --text-color: #3a2e2a;     /* coklat gelap */
+
+  /*Fonts*/
+  --font-heading: 'Lobster', cursive;
+  --font-body: 'Poppins', sans-serif;
+}
+
+*{
+    margin:0;
+    box-sizing:border-box;
+    outline: none;
+    border: none;
+    text-decoration:none ;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 80px;
+}
+
+
+body.lock-scroll {
+  overflow: hidden;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+.seo-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
+/*NAVBAR STYLE*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 5%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    position: fixed;
+
+    background-color:  rgba(139, 94, 60, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--accent-color);
+    }
+
+.navbar .left-section a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--bg-color);
+}
+
+.navbar .left-section span {
+    color: var(--accent-color);
+}
+
+.navbar .right-sections a {
+    color: var(--secondary-color);
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+
+.navbar .right-sections a:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.navbar .right-sections a::after{
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.2s linear;
+}
+
+.navbar .right-sections a:hover::after {
+    transform: scaleX(0.7);
+}
+
+.navbar .navbar-extra a {
+    color:var(--bg-color);
+    margin: 0 0.5rem;
+}
+
+
+#hamburger-menu {
+    display: none;
+
+}
+
+.hamburger {
+    cursor: pointer;
+      transition: transform 0.3s ease;
+}
+
+.hamburger.active {
+     transform: rotate(90deg) scale(1.1);
+     transition: transform 0.3s ease;
+}
+
+/*Hero Style*/
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--bg-color);
+  padding: 2rem 5%;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  color: var(--primary-color);
+}
+
+.hero-content h2 span {
+  color: var(--accent-color);
+}
+
+.hero-content h3 {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.hero-btn {
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  margin: 0 0.8rem;
+
+  border-radius: 30px;
+  font-size: 1.4rem;
+  transition: 0.3s;
+} 
+
+.btn.primary {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.btn.secondary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/*Kelas Kami Section*/
+
+.kisah {
+  padding: 8rem 7%;
+  background-color: var(--bg-color);
+}
+
+.kisah-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.kisah-text {
+  flex:1 1 45%;
+}
+
+.kisah-text h2 {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.kisah-text p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.kisah-image {
+  flex: 1 1 45%;
+}
+
+.kisah-image img {
+  width: 100%;
+  border-radius: 1.2rem;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.kisah-text h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  margin-top: 0.8rem;
+}
+
+.kisah-closing {
+  margin-top: 2rem;
+  font-style: italic;
+  color: var(--primary-color);
+  opacity: 0.85;
+}
+
+/*Galeri Kenangan*/
+.galeri {
+  padding: 8rem 7%;
+  background-color: var(--bg-color);
+}
+.galeri-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+.galeri-header h2 {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.galeri-header p {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.galeri-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.galeri-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.galeri-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.galeri-item .caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #fff;
+  pointer-events: none;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+.galeri-item:hover img {
+  transform: scale(1.1);
+}
+
+.galeri-item:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*Cerita Lama Style*/
+.cerita {
+  padding: 8rem 7%;
+  background-color: var(--bg-color);
+}
+
+.cerita-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.cerita-header h2 {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.cerita-header p {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.cerita-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3rem;
+}
+
+.cerita-item {
+  background-color: rgba(255,255,255,0.55);
+  padding: 2.5rem;
+  border-radius: 1.6rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cerita-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.cerita-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.cerita-item p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+/* TIMELINE SECTION */
+.timeline {
+  padding: 8rem 7%;
+  background-color: var(--bg-color);
+}
+
+.timeline-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 6rem;
+}
+
+.timeline-header h2 {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  color: var(--primary-color);
+}
+
+.timeline-header p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  opacity: 0.85;
+}
+
+/* LIST */
+.timeline-list {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 3rem;
+}
+
+/* Garis waktu */
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: var(--secondary-color);
+  opacity: 0.6;
+}
+
+/* ITEM */
+.timeline-item {
+  position: relative;
+  margin-bottom: 4.5rem;
+  padding-left: 3rem;
+}
+
+/* Titik */
+.timeline-dot {
+  position: absolute;
+  left: -2px;
+  top: 0.6rem;
+  width: 14px;
+  height: 14px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+/* Konten */
+.timeline-content {
+  background-color: rgba(255, 255, 255, 0.55);
+  padding: 2.5rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+.timeline-content h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.timeline-content p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+/* PESAN RAHASIA */
+.pesan-rahasia {
+  padding: 10rem 7%;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pesan-container {
+  max-width: 700px;
+  text-align: center;
+}
+
+.pesan-text {
+  font-size: 1.8rem;
+  line-height: 2;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.pesan-signature {
+  display: block;
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  opacity: 0.6;
+  color: var(--primary-color);
+}
+
+.pesan-rahasia.reveal {
+  transform: translateY(20px);
+}
+
+.pesan-rahasia.reveal.active {
+  transform: translateY(0);
+}
+
+/* SAMPAI JUMPA */
+.sampai-jumpa {
+  padding: 12rem 7% 10rem;
+  background: linear-gradient(
+    to bottom,
+    var(--bg-color),
+    rgba(245, 230, 200, 0.9)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sampai-container {
+  max-width: 720px;
+}
+
+.sampai-jumpa h2 {
+  font-family: var(--font-heading);
+  font-size: 3.4rem;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+}
+
+.sampai-text {
+  font-size: 1.7rem;
+  line-height: 2;
+  margin-bottom: 1.8rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.sampai-signature {
+  display: block;
+  margin-top: 3.5rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--primary-color);
+  opacity: 0.6;
+}
+
+.sampai-jumpa.reveal {
+  transform: translateY(25px);
+}
+
+.sampai-jumpa.reveal.active {
+  transform: translateY(0);
+}
+
+.footer {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  background-color: var(--bg-color);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer p {
+  font-size: 1.9rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.footer span {
+  display: block;
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.05em;
+}
+
+
+
+
+/*Media Queeres*/
+
+ /* Laptop */
+@media (max-width: 1366px) {
+html{
+    font-size: 75%;
+ }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+html{
+    font-size: 62.5%;
+ }
+
+#hamburger-menu {
+    display: inline-block;
+  }
+
+.navbar .right-sections {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    background-color: var(--bg-color);
+    width: 30rem;
+    height: calc(100vh - 80px);
+    transition: transform 0.4s ease;
+    transform: translateX(100%);
+
+ }
+
+.navbar .right-sections.active{
+    transform: translateX(0);
+ }
+
+.navbar .right-sections a {
+    color: var(--primary-color);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: 0.3s ease;
+ }
+
+ .navbar .right-sections.active a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .navbar .right-sections.active a:nth-child(1) { transition-delay: 0.05s; }
+  .navbar .right-sections.active a:nth-child(2) { transition-delay: 0.1s; }
+  .navbar .right-sections.active a:nth-child(3) { transition-delay: 0.15s; }
+  .navbar .right-sections.active a:nth-child(4) { transition-delay: 0.2s; }
+  .navbar .right-sections.active a:nth-child(5) { transition-delay: 0.25s; }
+  .navbar .right-sections.active a:nth-child(6) { transition-delay: 0.3s; }
+ 
+
+.navbar .right-sections a::after {
+    transform-origin:0 0;
+ }
+
+.navbar .right-sections a:hover::after {
+    transform: scaleX(0.2);
+ }
+ /*Hero*/
+   .hero-content h2 {
+    font-size: 4.5rem;
+  }
+
+  .hero-content h3 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.4rem;
+  }
+
+  /*Kisah Section*/
+  .kisah-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .kisah-text h2 {
+    font-size: 2.8rem;
+  }
+  /*Galeri Section*/
+   .galeri {
+    padding: 6rem 6%;
+  }
+
+  .galeri-header h2 {
+    font-size: 2.8rem;
+  }
+
+  .galeri-header p {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 450px) {
+  .galeri-grid {
+    gap: 1.5rem;
+  }
+
+  .galeri-item .caption {
+    font-size: 1.3rem;
+  }
+}
+/*Cerita Lama Section*/
+  .cerita {
+    padding: 6rem 6%;
+  }
+
+  .cerita-header h2 {
+    font-size: 2.8rem;
+  }
+
+  .cerita-header p {
+    font-size: 1.4rem;
+  }
+
+  .cerita-item {
+    padding: 2rem;
+  }
+
+  .timeline-list {
+  padding-left: 2rem;
+}
+
+.timeline-content {
+  padding: 2rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.8rem;
+}
+
+  .pesan-text {
+    font-size: 1.6rem;
+  }
+
+  .pesan-signature {
+    font-size: 1.3rem;
+  }
+
+   .sampai-jumpa h2 {
+    font-size: 2.8rem;
+  }
+
+  .sampai-text {
+    font-size: 1.5rem;
+  }
+
+}
+@media (max-width: 480px) {
+  .footer p {
+    font-size: 1.6rem;
+  }
+}
+
+ /* Mobile Phone*/
+@media (max-width: 450px) {
+html{
+    font-size: 55%;
+ }
+.cerita-list {
+    gap: 2rem;
+  }
+
+  .cerita-item h3 {
+    font-size: 1.6rem;
+  }
+
+  .cerita-item p {
+    font-size: 1.4rem;
+  }
+}
