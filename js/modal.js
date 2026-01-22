@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const galleryImages = document.querySelectorAll(".galeri-item img");
 
-  // DEBUG: pastikan gambar terdeteksi
+ 
   console.log("Jumlah gambar:", galleryImages.length);
 
   galleryImages.forEach(img => {

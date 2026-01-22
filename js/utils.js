@@ -10,7 +10,7 @@ menu.onclick = (e) => {
   document.body.classList.toggle("lock-scroll");
 };
 
-// klik di luar menu → tutup sidebar
+// klik di luar menu = tutup sidebar
 document.addEventListener("click", function (e) {
   if (!menu.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove("active");
