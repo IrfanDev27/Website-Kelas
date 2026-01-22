@@ -19,7 +19,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// 🔥 INI BAGIAN BARU (WAJIB)
 document.querySelectorAll('.right-sections a').forEach(link => {
   link.addEventListener('click', () => {
     navbarNav.classList.remove('active');
